@@ -3,11 +3,19 @@ import { MotionProps, motion } from 'framer-motion'
 export default function Index() {
   const parentVariants: MotionProps['variants'] = {
     initial: {
-      '--bg-color': 0,
-    } as any,
+      backgroundImage: `linear-gradient(-225deg, #5271C4 0%, #B19FFF 10%, #ECA1FE 100%);`,
+    },
     animate: {
-      '--bg-color': 250,
-    } as any,
+      backgroundImage: `linear-gradient(-225deg, #ECA1FE 0%, #B19FFF 90%, #5271C4 100%)`,
+      transition: {
+        repeatType: 'reverse',
+        repeat: Infinity,
+        ease: 'linear',
+        delayChildren: 0.5,
+        staggerChildren: 0.2,
+        duration: 5,
+      }
+    },
   }
 
   const childrenVariants: MotionProps['variants'] = {
@@ -20,10 +28,13 @@ export default function Index() {
     animate: {
       x: 0,
       y: 0,
+      scale: 1.5,
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.5,
+        duration: 1,
+        repeat: Infinity,
+        repeatType: 'reverse',
       },
     },
   }
@@ -31,13 +42,10 @@ export default function Index() {
   return (
     <motion.h1
       className="h-screen flex justify-center items-center text-6xl"
-      style={{
-        backgroundColor: 'rgb(var(--bg-color), 136, 219)',
-      }}
       initial="initial"
       animate="animate"
       variants={parentVariants}
-      transition={{ staggerChildren: 0.2, duration: 2, when: 'beforeChildren' }}>
+    >
       {'Hello , world!'.split('').map((v, k) => (
         <motion.span key={k} variants={childrenVariants}>
           {v}
