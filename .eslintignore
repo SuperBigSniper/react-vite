@@ -8,3 +8,5 @@ jest.setup.ts
 jest.config.js
 /test/__mocks__/fileMock.js
 commitlint.config.js
+.eslintrc.js
+postcss.config.js

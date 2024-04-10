@@ -4,5 +4,11 @@
     "module": "esnext",
     "moduleResolution": "node"
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "vite.config.ts",
+    ".eslintrc.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "commitlint.config.js"
+  ]
 }
