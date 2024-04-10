@@ -14,7 +14,7 @@ export default function Index() {
         delayChildren: 0.5,
         staggerChildren: 0.2,
         duration: 5,
-      }
+      },
     },
   }
 
