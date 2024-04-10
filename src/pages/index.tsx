@@ -1,9 +1,10 @@
 import { MotionProps, motion } from 'framer-motion'
+import { Outlet } from 'react-router-dom'
 
 export default function Index() {
   const parentVariants: MotionProps['variants'] = {
     initial: {
-      backgroundImage: `linear-gradient(-225deg, #5271C4 0%, #B19FFF 10%, #ECA1FE 100%);`,
+      backgroundImage: `linear-gradient(-225deg, #5271C4 0%, #B19FFF 10%, #ECA1FE 100%)`,
     },
     animate: {
       backgroundImage: `linear-gradient(-225deg, #ECA1FE 0%, #B19FFF 90%, #5271C4 100%)`,
@@ -40,17 +41,24 @@ export default function Index() {
   }
 
   return (
-    <motion.h1
-      className="h-screen flex justify-center items-center text-6xl"
-      initial="initial"
-      animate="animate"
-      variants={parentVariants}
-    >
-      {'Hello , world!'.split('').map((v, k) => (
-        <motion.span key={k} variants={childrenVariants}>
-          {v}
-        </motion.span>
-      ))}
-    </motion.h1>
+    <>
+      <motion.h1
+        className="h-screen flex justify-center items-center text-6xl"
+        initial="initial"
+        animate="animate"
+        variants={parentVariants}
+      >
+        <div className="flex flex-col justify-center items-center gap-4">
+          <div className="flex">
+            {'Hello , world!'.split('').map((v, k) => (
+              <motion.span key={k} variants={childrenVariants}>
+                {v}
+              </motion.span>
+            ))}
+          </div>
+          <Outlet />
+        </div>
+      </motion.h1>
+    </>
   )
 }
