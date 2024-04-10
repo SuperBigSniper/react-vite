@@ -3,10 +3,10 @@
 *.css
 /node_modules
 /build
-vite.config.ts
 jest.setup.ts
 jest.config.js
 /test/__mocks__/fileMock.js
-commitlint.config.js
-.eslintrc.js
-postcss.config.js
+# vite.config.ts
+# commitlint.config.js
+# .eslintrc.js
+# postcss.config.js
