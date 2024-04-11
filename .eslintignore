@@ -1,11 +1,10 @@
-/dist
+dist
 *.scss
 *.css
-/node_modules
-/build
+node_modules
+build
 jest.setup.ts
 jest.config.js
-/test/__mocks__/fileMock.js
 # vite.config.ts
 # commitlint.config.js
 # .eslintrc.js
